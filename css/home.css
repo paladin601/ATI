@@ -7,3 +7,15 @@
     width: 50px;
     height: auto;
 }
+#menu{
+	position: relative;
+}
+#reserva{
+	position: absolute;
+}
+footer {
+	bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
