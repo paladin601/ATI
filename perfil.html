@@ -66,44 +66,82 @@
     </div>
   </nav>
   <!--/.Navbar -->
-  <section class="container">
+  <section class="container" id="contenido">
     <div class="row">
       <div style="margin: 0 auto;">
         <form>
-          <table class="table table-borderless text-center" style="margin: 0 auto;">
-            <th colspan="2">
-              Registro de Usuario
-            </th>
-            <tr>
-              <td>
-                Correo
-              </td>
-              <td>
-                <input type = "email" name = "Correo" value = "" pattern = [a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}> 
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Contraseña
-              </td>
-              <td>
-                <input type = "password" name = "Contrasena" value = "" >
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Repetir contraseña 
-              </td>
-              <td>
-                <input type = "password" name = "Contrasena" value = "" >
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <input type="submit" name="Registrar" value="Registrar">              
-              </td>
-            </tr>
-          </table>
+        <table class="table table-borderless text-center" style="margin: 0 auto;">
+          <th colspan="2">
+            Configuración de perfil
+          </th>
+          <tr>
+            <td>
+              Nombre:
+            </td>
+            <td>
+              <input type = "text" name = "nombre" value = "">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Apellido:
+            </td>
+            <td>
+              <input type = "text" name = "apellido" value = "">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Numero de telf:
+            </td>
+            <td>
+              <input type = "text" name = "telefono" value = "">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Imagen de perfil:
+            </td>
+            <td>
+              <input type = "button" name = "imagen" value = "Seleccionar">
+            </td>
+          </tr>     
+        </table>
+
+        <table class="table table-borderless text-center" style="margin: 0 auto;">
+          <th colspan="2">
+            Cambiar contraseña
+          </th>
+          <tr>
+            <td>
+              Contraseña actual:
+            </td>
+            <td>
+              <input type = "text" name = "Materia" value = "">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Nueva contraseña:
+            </td>
+            <td>
+              <input type = "text" name = "Materia" value = "">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Repetir contraseña:
+            </td>
+            <td>
+              <input type = "text" name = "Materia" value = "">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" name="Ingresar" value="Ingresar">              
+            </td>
+          </tr>
+        </table>
         </form>
       </div>
     </div>

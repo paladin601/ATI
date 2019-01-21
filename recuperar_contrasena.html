@@ -66,28 +66,32 @@
     </div>
   </nav>
   <!--/.Navbar -->
-  <section class="container" id="reserva">
+  <section class="container">
     <div class="row">
-      <div class="col-5">
+
+      <div style="margin: 0 auto;">
+        <form>
+          <table class="table table-borderless text-center" style="margin: 0 auto;">
+            <th colspan="2">
+              Recuperar Contraseña
+            </th>
+            <tr>
+              <td>
+                Correo
+              </td>
+              <td>
+                <input type = "email" name = "Correo" value = "" pattern = [a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}> 
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="submit" name="Recuperar" value="Recuperar" align="text-center">
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
-      <div class="col-2">
-        <table class="table table-borderless text-center">
-          <th colspan="2">
-            Recuperar Contraseña
-          </th>
-          <tr>
-            <td>
-              Correo
-            </td>
-            <td>
-              <input type = "email" name = "Correo" value = "" pattern = [a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}> 
-            </td>
-          </tr>
-        </table>
-        <input type="submit" name="Recuperar" value="Recuperar">
-      </div>
-      <div class="col-5">
-      </div>
+
     </div>
   </section>
 

@@ -10,7 +10,7 @@
 #menu{
 	position: relative;
 }
-#reserva{
+#contenido{
 	position: absolute;
 }
 footer {
@@ -18,4 +18,6 @@ footer {
     position: fixed;
     width: 100%;
 }
-
+.derecha{
+	text-align: right;
+}
