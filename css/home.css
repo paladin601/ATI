@@ -10,14 +10,6 @@
 #menu{
 	position: relative;
 }
-#contenido{
-	position: absolute;
-}
-footer {
-	bottom: 0;
-    position: fixed;
-    width: 100%;
-}
 .derecha{
 	text-align: right;
 }
