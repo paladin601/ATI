@@ -1,0 +1,12 @@
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table {
+  border-spacing: 5px;
+}
+
+.cancelar {
+  float: left;
+}
