@@ -13,3 +13,9 @@
 .derecha{
 	text-align: right;
 }
+.mouse-click{
+    cursor: pointer;
+}
+tr.mouse-click:hover{
+    background-color: #afb4b6!important;
+}

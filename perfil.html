@@ -15,7 +15,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,8 +32,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="home.html">Inicio</a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="consultarAula.html">Consultar Aula</a>
@@ -41,7 +42,7 @@
           <a class="nav-link" href="consultarHorario.html">Consultar Horario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Consultar Solicitudes de Aula</a>
+          <a class="nav-link" href="./solicitudesReservacion.html">Consultar Solicitudes de Aula</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="reserva_aula.html">Reservar Aula</a>
@@ -52,8 +53,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
@@ -68,84 +68,43 @@
   <!--/.Navbar -->
   <nav class="container" id="contenido">
     <div class="row">
-      <div style="margin: 0 auto;">
-        <form>
-        <table class="table table-borderless text-center" style="margin: 0 auto;">
-          <th colspan="2">
-            Configuración de perfil
-          </th>
-          <tr>
-            <td>
-              Nombre:
-            </td>
-            <td>
-              <input type = "text" name = "nombre" value = "">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Apellido:
-            </td>
-            <td>
-              <input type = "text" name = "apellido" value = "">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Numero de telf:
-            </td>
-            <td>
-              <input type = "text" name = "telefono" value = "">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Imagen de perfil:
-            </td>
-            <td>
-              <input type = "file" name = "imagen" value = "Seleccionar">
-            </td>
-          </tr>     
-        </table>
+      <div style="margin: 0 auto; min-width: 25vw;">
 
-        <table class="table table-borderless text-center" style="margin: 0 auto;">
-          <th colspan="2">
-            Cambiar contraseña
-          </th>
-          <tr>
-            <td>
-              Contraseña actual:
-            </td>
-            <td>
-              <input type = "text" name = "Materia" value = "">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Nueva contraseña:
-            </td>
-            <td>
-              <input type = "text" name = "Materia" value = "">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Repetir contraseña:
-            </td>
-            <td>
-              <input type = "text" name = "Materia" value = "">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" name="Aplicar" value="Aplicar">              
-            </td>
-            <td>
-              <input type="button" name="Cancelar" value="Cancelar" onclick= "location.href='home.html'">
-            </td>
-          </tr>
-        </table>
+        <form>
+          <div class="form-group">
+            <h2>Configuración de perfil</h2>
+            <label for="Nombre">Nombre:</label>
+            <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
+          </div>
+          <div class="form-group">
+            <label for="Apellido">Apellido:</label>
+            <input type="text" class="form-control" id="Apellido" placeholder="Apellido">
+          </div>
+          <div class="form-group">
+            <label for="telf">Numero de telf:</label>
+            <input type="text" class="form-control" id="telf" placeholder="Numero de telf">
+          </div>
+          <div class="form-group">
+            <label for="img">Imagen de perfil:</label>
+            <input type="file" class="form-control-file" id="img">
+          </div>
+          <div class="form-group">
+            <h4 class="text-center">Cambiar Contraseña</h4>
+            <label for="contraseña">Contraseña actual:</label>
+            <input type="password" class="form-control" id="contraseña">
+          </div>
+          <div class="form-group">
+            <label for="Ncontraseña">Nueva Contraseña:</label>
+            <input type="password" class="form-control" id="Ncontraseña">
+          </div>
+          <div class="form-group">
+            <label for="NRcontraseña">RepetirContraseña:</label>
+            <input type="password" class="form-control" id="NRcontraseña">
+          </div>
         </form>
+
+        <button class="btn btn-outline-primary"> Aplicar</button>
+        <button class="btn btn-outline-primary" onclick="location.href='index.html'"> Cancelar</button>
       </div>
     </div>
   </nav>

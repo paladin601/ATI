@@ -15,7 +15,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">Inicio</a>
+          <a class="nav-link" href="index.html">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="consultarAula.html">Consultar Aula</a>
@@ -41,9 +42,9 @@
           <a class="nav-link" href="consultarHorario.html">Consultar Horario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Consultar Solicitudes de Aula</a>
+          <a class="nav-link" href="./solicitudesReservacion.html">Consultar Solicitudes de Aula</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="reserva_aula.html">Reservar Aula</a>
         </li>
         <li class="nav-item">
@@ -52,8 +53,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
@@ -67,104 +67,78 @@
   </nav>
   <!--/.Navbar -->
   <section class="container" id="contenido">
-      <div class="row">
-        <div style="margin: 0 auto;">
-          <form>
+    <div class="row">
+      <div style="margin: 0 auto;  min-width: 25vw;">
+        <form>
+          <div class="form-group">
+            <h2>Reservacion de Aula</h2>
+            <label for="exampleInputEmail1">Aula:</label>
 
-            <table class="table table-borderless" style="margin: 0 auto;">
-              <thead>
-                <tr>
-                  <th colspan = "2" scope="col">Reservacion de Aula</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="derecha">Aula:</td>
-                  <td>            
-                    <select name="Aula">
-                      <option label="Auditorio"> Auditorio </option>
-                      <option label="Aula 01"> Aula 01 </option>
-                      <option label="Aula 02"> Aula 02 </option>
-                      <option label="Aula 03"> Aula 03 </option>
-                      <option label="Aula 04"> Aula 04 </option>
-                      <option label="Aula 05"> Aula 05 </option>
-                      <option label="Aula 06"> Aula 06 </option>
-                      <option label="Aula 07"> Aula 07 </option>
-                      <option label="Aula 08"> Aula 08 </option>
-                      <option label="Aula 09"> Aula 09 </option>
-                      <option label="Aula 10"> Aula 10 </option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="derecha">Fecha Inicio</td>
-                  <td>
-                    <input type="date" name="fecha_inicio">
-                  </td>
-                </tr>
-                <tr>
-                  <td class="derecha">Fecha Fin</td>
-                  <td>
-                    <input type="date" name="fecha_fin">
-                  </td>
-                </tr>
-                 <tr>
-                  <td class="derecha">Horario</td>
-                  <td>
-                    <select name="Turno">
-                      <option label="Turno 1"> 07:00 am - 08:00 am </option>
-                      <option label="Turno 2"> 08:00 am - 09:00 am </option>
-                      <option label="Turno 3"> 09:00 am - 10:00 am</option>
-                      <option label="Turno 4"> 10:00 am - 11:00 am </option>
-                      <option label="Turno 5"> 11:00 am - 12:00 m </option>
-                      <option label="Turno 6"> 12:00 m - 01:00 pm </option>
-                      <option label="Turno 7"> 01:00 pm - 02:00 pm</option>
-                      <option label="Turno 8"> 02:00 pm - 03:00 pm </option>
-                      <option label="Turno 9"> 03:00 pm - 04:00 pm</option>
-                      <option label="Turno 10"> 04:00 pm - 05:00 pm</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="derecha">Materia</td>
-                  <td>
-                    <input type = "text" name = "Materia" value = "">
-                  </td>
-                </tr>
-                <tr>
-                  <td class="derecha">Periodicidad</td>
-                  <td>
-                    <select name="Turno">
-                      <option label="Diario"> Un dia </option>
-                      <option label="Semanal"> Semanal </option>
-                      <option label="Quincenal"> Quincenal</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="derecha">Motivo</td>
-                  <td>
-                    <input type = "text" name = "Motivo" value = "">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table>
-              <tr>
-                <td>
-                  <input type="submit" name="Reservar" value="Reservar">    
-                </td>
-                <td>
-                  <input type="reset" name="Reestablecer" value="Reestablecer">     
-                </td>
-                <td>
-                  <input type="button" name="Cancelar" value="Cancelar" onclick= "location.href='home.html'">
-                </td>
-              </tr>
-            </table>
-          </form>
-        </div>
-    </div>
+            <select name="Aula" class="form-control">
+              <option label="Auditorio"> Auditorio </option>
+              <option label="Aula 01" > Aula 01 </option>
+              <option label="Aula 02"> Aula 02 </option>
+              <option label="Aula 03"> Aula 03 </option>
+              <option label="Aula 04"> Aula 04 </option>
+              <option label="Aula 05"> Aula 05 </option>
+              <option label="Aula 06"> Aula 06 </option>
+              <option label="Aula 07"> Aula 07 </option>
+              <option label="Aula 08"> Aula 08 </option>
+              <option label="Aula 09"> Aula 09 </option>
+              <option label="Aula 10"> Aula 10 </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fecha_inicio">Fecha Inicio:</label>
+            <input class="form-control" type="date" id="fecha_inicio">
+          </div>
+          <div class="form-group">
+            <label for="fecha_fin">Fecha fin:</label>
+            <input class="form-control" type="date" id="fecha_fin">
+          </div>
+          <div class="form-group">
+
+            <label for="horario">Horario:</label>
+            <select name="Turno" id="horario" class="form-control" >
+              <option label="Turno 1"> 07:00 am - 08:00 am </option>
+              <option label="Turno 2" > 08:00 am - 09:00 am </option>
+              <option label="Turno 3"> 09:00 am - 10:00 am</option>
+              <option label="Turno 4"> 10:00 am - 11:00 am </option>
+              <option label="Turno 5"> 11:00 am - 12:00 m </option>
+              <option label="Turno 6"> 12:00 m - 01:00 pm </option>
+              <option label="Turno 7"> 01:00 pm - 02:00 pm</option>
+              <option label="Turno 8"> 02:00 pm - 03:00 pm </option>
+              <option label="Turno 9"> 03:00 pm - 04:00 pm</option>
+              <option label="Turno 10"> 04:00 pm - 05:00 pm</option>
+            </select>
+          </div>
+          <div class="form-group">
+
+            <label for="Materia">Materia:</label>
+            <input type="text" id="Materia" class="form-control" >
+
+          </div>
+          <div class="form-group">
+            <label for="Periodicidad">Periodicidad:</label>
+            <select id="Periodicidad" class="form-control" >
+              <option label="Diario"> Un dia </option>
+              <option label="Semanal" > Semanal </option>
+              <option label="Quincenal"> Quincenal</option>
+            </select>
+          </div>
+          <div class="form-group">
+
+            <label for="Motivo">Motivo:</label>
+            <input type="text" id="Motivo" class="form-control" >
+
+          </div>
+        </form>
+        <button class="btn btn-outline-primary">Guardar</button>
+        <button class="btn btn-outline-primary">Reestablecer</button>
+        <button class="btn btn-outline-primary" onclick="location.href='index.html'">Cancelar</button>
+
+      </div>
+
 
   </section>
 
