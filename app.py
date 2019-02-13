@@ -2,17 +2,10 @@ from flask import Flask, render_template, render_template_string ,session, reque
 from flask_sqlalchemy import SQLAlchemy
 from flask_user import login_required, UserManager, UserMixin
 
-
-
-
-
-
 def create_app():
     
     # Create Flask app load app.config
     app = Flask(__name__, static_url_path = "/tmp", static_folder = "tmp")
-
-
 
     # The Home page is accessible to anyone
     @app.route('/')
@@ -56,6 +49,9 @@ def create_app():
     @app.route('/upload')
     def upload():
         return render_template("cargarReservaciones.html")
+    @app.route('/modify')
+    def modify():
+        return render_template("modificarAula.html")
 
     return app
 
