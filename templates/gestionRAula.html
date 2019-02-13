@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<section class="container">
+    <div class="row">
+        <div style="margin: 0 auto; min-width: 25vw;">
+            <form>
+                <div class="form-group">
+                    <h2>Solicitud de Aula</h2>
+                    <label for="exampleInputEmail1">Aula:</label>
+
+                    <select name="Aula" class="form-control" disabled>
+                        <option label="Auditorio"> Auditorio </option>
+                        <option label="Aula 01" selected> Aula 01 </option>
+                        <option label="Aula 02"> Aula 02 </option>
+                        <option label="Aula 03"> Aula 03 </option>
+                        <option label="Aula 04"> Aula 04 </option>
+                        <option label="Aula 05"> Aula 05 </option>
+                        <option label="Aula 06"> Aula 06 </option>
+                        <option label="Aula 07"> Aula 07 </option>
+                        <option label="Aula 08"> Aula 08 </option>
+                        <option label="Aula 09"> Aula 09 </option>
+                        <option label="Aula 10"> Aula 10 </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="solicitante">Solicitante:</label>
+                    <input class="form-control" type="text" id="solicitante" value="Leonardo P." disabled>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_inicio">Fecha Inicio:</label>
+                    <input class="form-control" type="date" id="fecha_inicio">
+                </div>
+                <div class="form-group">
+                    <label for="fecha_fin">Fecha fin:</label>
+                    <input class="form-control" type="date" id="fecha_fin">
+                </div>
+                <div class="form-group">
+
+                    <label for="horario">Horario:</label>
+                    <select name="Turno" id="horario" class="form-control" disabled>
+                        <option label="Turno 1"> 07:00 am - 08:00 am </option>
+                        <option label="Turno 2" selected> 08:00 am - 09:00 am </option>
+                        <option label="Turno 3"> 09:00 am - 10:00 am</option>
+                        <option label="Turno 4"> 10:00 am - 11:00 am </option>
+                        <option label="Turno 5"> 11:00 am - 12:00 m </option>
+                        <option label="Turno 6"> 12:00 m - 01:00 pm </option>
+                        <option label="Turno 7"> 01:00 pm - 02:00 pm</option>
+                        <option label="Turno 8"> 02:00 pm - 03:00 pm </option>
+                        <option label="Turno 9"> 03:00 pm - 04:00 pm</option>
+                        <option label="Turno 10"> 04:00 pm - 05:00 pm</option>
+                    </select>
+                </div>
+                <div class="form-group">
+
+                    <label for="Materia">Materia:</label>
+                    <input type="text" id="Materia" class="form-control" value="ATI" disabled>
+
+                </div>
+                <div class="form-group">
+                    <label for="Periodicidad">Periodicidad:</label>
+                    <select id="Periodicidad" class="form-control" disabled>
+                        <option label="Diario"> Un dia </option>
+                        <option label="Semanal" selected> Semanal </option>
+                        <option label="Quincenal"> Quincenal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+
+                    <label for="Motivo">Motivo:</label>
+                    <input type="text" id="Motivo" class="form-control" value="Clases semestre 2019-I" disabled>
+
+                </div>
+            </form>
+            <button class="btn btn-outline-primary">Aprobar</button>
+            <button class="btn btn-outline-primary" onclick="location.href='index.html'">Rechazar</button>
+
+        </div>
+
+</section>
+{% endblock %}

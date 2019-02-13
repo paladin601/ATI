@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="container" id="contenido">
+  <div class="row">
+    <div style="margin: 0 auto; min-width: 25vw;">
+
+      <form>
+        <div class="form-group">
+          <h2>Configuración de perfil</h2>
+          <label for="Nombre">Nombre:</label>
+          <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <label for="Apellido">Apellido:</label>
+          <input type="text" class="form-control" id="Apellido" placeholder="Apellido">
+        </div>
+        <div class="form-group">
+          <label for="telf">Numero de telf:</label>
+          <input type="text" class="form-control" id="telf" placeholder="Numero de telf">
+        </div>
+        <div class="form-group">
+          <label for="img">Imagen de perfil:</label>
+          <input type="file" class="form-control-file" id="img">
+        </div>
+        <div class="form-group">
+          <h4 class="text-center">Cambiar Contraseña</h4>
+          <label for="contraseña">Contraseña actual:</label>
+          <input type="password" class="form-control" id="contraseña">
+        </div>
+        <div class="form-group">
+          <label for="Ncontraseña">Nueva Contraseña:</label>
+          <input type="password" class="form-control" id="Ncontraseña">
+        </div>
+        <div class="form-group">
+          <label for="NRcontraseña">RepetirContraseña:</label>
+          <input type="password" class="form-control" id="NRcontraseña">
+        </div>
+      </form>
+
+      <button class="btn btn-outline-primary"> Aplicar</button>
+      <button class="btn btn-outline-primary" onclick="location.href='index.html'"> Cancelar</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

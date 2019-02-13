@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Consultar Aula{% endblock %}
+{% block content %}
+<section class="container">
+  <div class="row">
+    <div style="margin: 0 auto; min-width: 25vw;">
+      <div class="form-group">
+        <h2>Consultar Aula</h2>
+        <label for="Buscar">Buscar:</label>
+        <input type="text" class="form-control" id="Buscar">
+      </div>
+      <div class="form-group">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Aula</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+            <tr class="mouse-click" onclick="location.href='./modificarAula.html'">
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-group col" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary">1</button>
+          <button type="button" class="btn btn-secondary">2</button>
+          <button type="button" class="btn btn-secondary">3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</section>
+{% endblock %}
