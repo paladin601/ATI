@@ -1,6 +1,12 @@
 from flask import Flask, render_template, render_template_string ,session, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_user import login_required, UserManager, UserMixin
+from pymongo import MongoClient
+
+app = Flask(__name__)
+app.secret_key = 'the secret key'
+client = MongoClient()
+db = client.appdb
 
 def create_app():
     
@@ -15,7 +21,23 @@ def create_app():
 
     @app.route('/login')
     def login():
-        return render_template("iniciar_sesion.html")
+        return render_template("Iniciar_sesion.html")
+
+    @app.route('/log_in', methods = ['POST', 'GET'])
+    def log_in():
+        if 'username' in session:
+            username = session['username']
+            return render_template ('index.html')
+        else:
+            if request.method == 'POST':
+                if db.users.find({ "$and" :[{'username':request.form['username']},{'password':request.form['password']}]}).count() > 0 :
+                    session['username'] = request.form['username']
+                    username = request.form['username']
+                    return render_template ('consultarAula.html')
+                else: 
+                    return render_template ('index.html')
+            else:
+                return render_template ('index.html')
     
     @app.route('/register')
     def register():
