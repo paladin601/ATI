@@ -5,15 +5,15 @@
 
   <div class="row">
     <div style="margin: 0 auto; min-width: 25vw;">
-      <form>
+      <form action="http://localhost:5000/log_in" method="POST" >
         <div class="form-group">
           <h2>Iniciar sesión:</h2>
           <label for="Correo">Correo</label>
-          <input type="email" class="form-control" id="Correo" placeholder="Correo">
+          <input type="email" class="form-control" id="username" placeholder="Correo">
         </div>
         <div class="form-group">
           <label for="Contraseña">Contraseña:</label>
-          <input type="password" class="form-control" id="Contraseña" placeholder="Contraseña">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña">
         </div>
         <div class="form-group">
           <a href="lostPassword"> ¿Olvido su contraseña? </a>
