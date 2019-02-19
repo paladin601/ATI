@@ -10,56 +10,46 @@
                     <tr>
                         <th scope="col">Aula</th>
                         <th scope="col">Solicitante</th>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Periodicidad</th>
                         <th scope="col">Horario</th>
+                        <th scope="col">Aprobar/Rechazar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                    <tr>
+                        <td>Auditorio</td>
+                        <td>Leonardo P.</td>
+                        <td>ATI</td>
+                        <td>Semanal</td>
+                        <td>7-9 am</td>
+                        <td>
+                            <button class="btn btn-outline-primary" id="aprobar" onclick="rechazar()">Aprobar</button>
+                            <button class="btn btn-outline-danger" id="rechazar" onclick="rechazar()">Rechazar</button>
+                        </td>
                     </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                    <tr>
+                        <td>Auditorio</td>
+                        <td>Leonardo P.</td>
+                        <td>ATI</td>
+                        <td>Semanal</td>
+                        <td>7-9 am</td>
+                        <td>
+                            <button class="btn btn-outline-primary" id="aprobar" onclick="rechazar()">Aprobar</button>
+                            <button class="btn btn-outline-danger" id="rechazar" onclick="rechazar()">Rechazar</button>
+                        </td>
                     </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                    <tr>
+                        <td>Auditorio</td>
+                        <td>Leonardo P.</td>
+                        <td>ATI</td>
+                        <td>Semanal</td>
+                        <td>7-9 am</td>
+                        <td>
+                            <button class="btn btn-outline-primary" id="aprobar" onclick="rechazar()">Aprobar</button>
+                            <button class="btn btn-outline-danger" id="rechazar" onclick="rechazar()">Rechazar</button>
+                        </td>
                     </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tr>
-                    <tr class="mouse-click" onclick="location.href='gestionRAula.html'">
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tr>
-
                 </tbody>
             </table>
             <div class="btn-group col" role="group" aria-label="Basic example">
@@ -72,4 +62,5 @@
 
             </div>
 </section>
+<script src="/static/js/solicitudes.js"></script>
 {% endblock %}

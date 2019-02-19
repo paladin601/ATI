@@ -1,12 +1,25 @@
 from flask import Flask, render_template, render_template_string ,session, request
-from flask_sqlalchemy import SQLAlchemy
+from flask_mongoalchemy import MongoAlchemy
 from flask_user import login_required, UserManager, UserMixin
+
+
+
 
 def create_app():
     
     # Create Flask app load app.config
-    app = Flask(__name__, static_url_path = "/tmp", static_folder = "tmp")
+    app = Flask(__name__)
+    # Create Flask app load app.config
+    app.config["MONGOALCHEMY_DATABASE"]="users"
+    # Initialize Flask-SQLAlchemy
+    db = MongoAlchemy(app)
 
+    # Define the User data-model.
+    # NB: Make sure to add flask_user UserMixin !!!
+
+    # Create all database tables
+
+    # Setup Flask-User and specify the User data-model
     # The Home page is accessible to anyone
     @app.route('/')
     def home_page():

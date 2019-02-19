@@ -19,3 +19,6 @@
 tr.mouse-click:hover{
     background-color: #afb4b6!important;
 }
+#calendar {
+    margin: 20px auto;
+  }

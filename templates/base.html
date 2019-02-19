@@ -6,12 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="/tmp/js/jquery.js"></script>
-    <script src="/tmp/js/popper.min.js"></script>
-    <link rel="stylesheet" href="/tmp/css/bootstrap.css">
-    <script src="/tmp/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="/tmp/fontawesome/css/all.css">
-    <link rel="stylesheet" href="/tmp/css/home.css" />
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/calender/fullcalendar.min.js"></script>
+    <link rel="stylesheet" href="/static/calender/fullcalendar.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/static/css/home.css" />
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
 </head>
@@ -19,7 +22,7 @@
 <body>
     <nav class="mb-1 navbar navbar-expand-lg navbar-light  bg-light fixed-top" id="menu">
         <a class="navbar-brand" href="./">
-            <img src="/tmp/assets/ucv.png" alt="logo" class="logo">
+            <img src="/static/assets/ucv.png" alt="logo" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
             aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +35,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./consult">Consultar Aula</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./consultHour">Consultar Horario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./solicitudes">Consultar Solicitudes de Aula</a>
