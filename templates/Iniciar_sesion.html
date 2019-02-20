@@ -7,6 +7,14 @@
       <form method="POST" action="/login">
         <div class="form-group">
           <h2>Iniciar sesión:</h2>
+          {% if error %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{error}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endif %}
           <label for="Correo">Correo</label>
           <input type="email" class="form-control" id="username" name="username" placeholder="Correo">
         </div>
@@ -17,11 +25,6 @@
         <div class="form-group">
           <a href="/lostPassword"> ¿Olvido su contraseña? </a>
         </div>
-        {% if error %}
-        <div>
-          {{error}}
-        </div>
-        {% endif %}
 
         <div class="form-group">
           <button class="btn btn-outline-primary" type="submit">Ingresar</button>

@@ -18,7 +18,8 @@ def home_page():
     
     if 'username' in session:
         username = session['username']
-        return render_template ('index.html',username = username,sesion="True")
+        tipo = session['typeuser']
+        return render_template ('index.html',username = username,sesion="True",tipo_usuario=tipo)
     else:
         return render_template ('index.html',sesion="False")
 
@@ -33,8 +34,10 @@ def login():
         if db.usuario.find({ "$and" :[{'username':request.form['username']},{'password':request.form['password']}]}).count() > 0 :
             session['username'] = request.form['username']
             username = request.form['username']
+            session['typeuser']="usuario"
+
             #datos_f = db.usuario.find()
-            return render_template ('index.html',username = username,sesion="True")
+            return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
         else: 
             return render_template ('Iniciar_sesion.html',sesion="False",error="usuario o contraseña incorrectos")
     else:
@@ -45,13 +48,26 @@ def login():
 def register():
     if request.method == 'POST':
         usernameF = request.form['Correo']
-        passwordF = request.form['Contrasena']
-        password = request.form['RContrasena']
-        db.usuario.insert({'username' : usernameF , 'password' : passwordF})
-        session['username'] = request.form['Correo']
-        username = request.form['Correo']
-        #datos_f = db.usuario.find()
-        return render_template ('index.html',username = username,sesion="True")
+        print("hola")
+        if db.usuario.find({'username':request.form['Correo']}).count()==0:  
+            print("hola")
+            passwordF = request.form['Contrasena']
+            password = request.form['RContrasena']
+            if passwordF == password:
+                print("hola")
+                db.usuario.insert({'username' : usernameF , 'password' : passwordF,'typeuser':'usuario'})
+                session['username'] = request.form['Correo']
+                session['typeuser']="usuario"
+                username = request.form['Correo']
+                #datos_f = db.usuario.find()
+                return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
+            else:
+                error="Las contraseñas no coinciden"
+                return render_template("registro_usuario.html",sesion="False",error=error)
+        else:
+            error="el correo ya esta registrado"
+            return render_template("registro_usuario.html",sesion="False",error=error)
+
     else:
         return render_template("registro_usuario.html",sesion="False")
     
@@ -63,7 +79,7 @@ def lostPassword():
 def consultAula():
     if 'username' in session:
         username = session['username']
-        return render_template("consultarAula.html" ,username = username,sesion="True")
+        return render_template("consultarAula.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
         return render_template ('consultarAula.html',sesion="False")
     
@@ -72,7 +88,7 @@ def consultAula():
 def consultHour():
     if 'username' in session:
         username = session['username']
-        return render_template("consultarHorario.html" ,username = username,sesion="True")
+        return render_template("consultarHorario.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
         return render_template ('consultarHorario.html',sesion="False")    
 
@@ -99,7 +115,7 @@ def per_in():
 def reserv():
     if 'username' in session:
         username = session['username']
-        return render_template("reserva_aula.html" ,username = username,sesion="True")
+        return render_template("reserva_aula.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
         return render_template ('Iniciar_sesion.html',sesion="False") 
 
@@ -107,7 +123,7 @@ def reserv():
 def solicitudes():
     if 'username' in session:
         username = session['username']
-        return render_template("solicitudesReservacion.html" ,username = username,sesion="True")
+        return render_template("solicitudesReservacion.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
         return render_template ('Iniciar_sesion.html',sesion="False")   
     
@@ -116,7 +132,7 @@ def solicitudes():
 def upload():
     if 'username' in session:
         username = session['username']
-        return render_template("cargarReservaciones.html" ,username = username,sesion="True")
+        return render_template("cargarReservaciones.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
         return render_template ('Iniciar_sesion.html',sesion="False")  
 
@@ -127,6 +143,7 @@ def modify():
 @app.route('/logout')
 def close():
 	session.pop('username', None)
+	session.pop('typeuser', None)
 	return render_template("index.html",sesion="False")
 
 #    return app

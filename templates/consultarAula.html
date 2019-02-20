@@ -3,10 +3,12 @@
 {% block content %}
 <section class="container">
   {% include "calender.html" %}
-
+  {% if sesion|string() == "True" %}
   <div>
     <button class="btn btn-outline-primary" onclick="location.href='/reserv'">Reservar</button>
   </div>
+  {% endif %}
+
 
 </section>
 {% endblock %}

@@ -7,6 +7,14 @@
       <form method="POST" action="/register">
         <div class="form-group">
           <h2> Registro de Usuario</h2>
+          {% if error %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{error}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endif %}
           <label for="Correo">Correo</label>
           <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Correo">
         </div>
