@@ -61,7 +61,17 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle mouse-click" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                        {% if sesion|string() == "True" %} {{username}} {% endif %}
+                        {% if sesion|string() == "True" %}
+                            {% if user.datos_personales %}
+                                {% if user.datos_personales.nombre %}
+                                    {{user.datos_personales.nombre}}
+                                {% else %}
+                                    {{username}}     
+                                {% endif %}
+                            {% else %}
+                                {{username}}     
+                            {% endif %}
+                        {% endif %}
                         <i class="fas fa-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default"

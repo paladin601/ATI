@@ -9,19 +9,23 @@
         <div class="form-group">
           <h2>Configuración de perfil</h2>
           <label for="Nombre">Nombre:</label>
-          <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" value={{nombre}}>
+          <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" value="{% if user.datos_personales %}{% if user.datos_personales.nombre %}{{ user.datos_personales.nombre }}{% endif %}{% endif %}">
         </div>
         <div class="form-group">
           <label for="Apellido">Apellido:</label>
-          <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Apellido" value={{apellido}}>
+          <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Apellido" value="{% if user.datos_personales %}{% if user.datos_personales.apellido %}{{ user.datos_personales.apellido }}{% endif %}{% endif %}">
         </div>
         <div class="form-group">
+            <label for="Correo">Correp:</label>
+            <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Correo" value="{% if username %}{{username}}{% endif %}" required>
+          </div>
+        <div class="form-group">
           <label for="telf">Numero de telf:</label>
-          <input type="text" class="form-control" id="telf" name="telf" placeholder="Numero de telf" value={{telf}}>
+          <input type="number" class="form-control" id="telf" name="telf" placeholder="Numero de telf" value="{% if user.datos_personales %}{% if user.datos_personales.telefono %}{{ user.datos_personales.telefono }}{% endif %}{% endif %}">
         </div>
         <div class="form-group">
           <label for="img">Imagen de perfil:</label>
-          <input type="file" class="form-control-file" id="img" name="img" value={{imgname}}>
+          <input type="file" class="form-control-file" id="img" name="img" value="{% if user.datos_personales %}{% if user.datos_personales.imagen %}{{ user.datos_personales.imagen }}{% endif %}{% endif %}">
         </div>
         <div class="form-group">
           <h4 class="text-center">Cambiar Contraseña</h4>
@@ -36,8 +40,8 @@
           <label for="NRcontraseña">RepetirContraseña:</label>
           <input type="password" class="form-control" id="NRcontraseña">
         </div>
+        <button class="btn btn-outline-primary" type="submit"> Aplicar</button>
       </form>
-      <button class="btn btn-outline-primary" type="submit"> Aplicar</button>
       <button class="btn btn-outline-primary" onclick="location.href='/'"> Cancelar</button>
 
     </div>
