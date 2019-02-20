@@ -26,3 +26,6 @@ tr.mouse-click:hover{
     display: flex;
     justify-content: space-between;
 }
+.hidden{
+    display: none;
+}

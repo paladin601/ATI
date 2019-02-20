@@ -9,49 +9,51 @@
                 <thead>
                     <tr>
                         <th scope="col">Aula</th>
-                        <th scope="col">Solicitante</th>
+                        <th scope="col">Correo Solicitante</th>
                         <th scope="col">Materia</th>
                         <th scope="col">Periodicidad</th>
                         <th scope="col">Horario</th>
+                        <th scope="col">Motivo</th>
                         <th scope="col">Aprobar/Rechazar</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for aula in aulas %}
                     <tr>
-                        <td>Auditorio</td>
-                        <td>Leonardo P.</td>
-                        <td>ATI</td>
-                        <td>Semanal</td>
-                        <td>7-9 am</td>
                         <td>
-                            <button class="btn btn-outline-primary" id="aprobar" onclick="rechazar()">Aprobar</button>
-                            <button class="btn btn-outline-danger" id="rechazar" onclick="rechazar()">Rechazar</button>
+                            {{aula.aula}}
+                        </td>
+                        <td>
+                            {{aula.solicitante}}
+                        </td>
+                        <td>
+                            {% if aula.materia %}
+                                {{aula.materia}}
+                            {% else %}
+                                Sin materia
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{aula.periodicidad}}
+                        </td>
+                        <td>
+                            {{aula.horario}}
+                        </td>
+                        <td>
+                            {{aula.motivo}}
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-primary" id="{{aula['iden']}}" onclick="aprobar(this)">Aprobar</button>
+                            <button class="btn btn-outline-danger" id="{{aula['iden']}}" onclick="rechazar(this)">Rechazar</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Auditorio</td>
-                        <td>Leonardo P.</td>
-                        <td>ATI</td>
-                        <td>Semanal</td>
-                        <td>7-9 am</td>
-                        <td>
-                            <button class="btn btn-outline-primary" id="aprobar" onclick="rechazar()">Aprobar</button>
-                            <button class="btn btn-outline-danger" id="rechazar" onclick="rechazar()">Rechazar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Auditorio</td>
-                        <td>Leonardo P.</td>
-                        <td>ATI</td>
-                        <td>Semanal</td>
-                        <td>7-9 am</td>
-                        <td>
-                            <button class="btn btn-outline-primary" id="aprobar" onclick="rechazar()">Aprobar</button>
-                            <button class="btn btn-outline-danger" id="rechazar" onclick="rechazar()">Rechazar</button>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
+            <form action="/solicitudes" class="hidden" id="formulario" method="POST">
+                <input type="text" name="id1" id="id1" class="hidden">
+                <input type="text" name="approb" id="approb" class="hidden">
+            </form>
             <div class="btn-group col" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary">1</button>
                 <button type="button" class="btn btn-secondary">2</button>

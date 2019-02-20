@@ -2,7 +2,7 @@
 {% block title %}Modificar Aula{% endblock %}
 {% block content %}
 <section class="container" style="display: flex;flex-direction: column;align-items: center;">
-  <form>
+  <form method="POST">
     <div class="form-group">
       <h2>Modificar Aula</h2>
       <label for="Aula">Aula:</label>
@@ -27,117 +27,10 @@
         </label>
       </div>
     </div>
-    <div class="form-group">
-      <label for="DD">Dias Disponible:</label>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="lunes">
-        <label class="form-check-label" for="lunes">
-          Lunes
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="martes">
-        <label class="form-check-label" for="martes">
-          Martes
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Miercoles">
-        <label class="form-check-label" for="Miercoles">
-          Miercoles
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Jueves">
-        <label class="form-check-label" for="Jueves">
-          Jueves
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Viernes">
-        <label class="form-check-label" for="Viernes">
-          Viernes
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="Horarios">Horarios Disponibles:</label>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="7am">
-        <label class="form-check-label" for="7am">
-          7:00 am
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="8am">
-        <label class="form-check-label" for="8am">
-          8:00 am
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="9am">
-        <label class="form-check-label" for="9am">
-          9:00 am
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="10am">
-        <label class="form-check-label" for="10am">
-          10:00 am
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="11am">
-        <label class="form-check-label" for="11am">
-          11:00 am
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="12pm">
-        <label class="form-check-label" for="12pm">
-          12:00 pm
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="1pm">
-        <label class="form-check-label" for="1pm">
-          1:00 pm
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="2pm">
-        <label class="form-check-label" for="2pm">
-          2:00 pm
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="3pm">
-        <label class="form-check-label" for="3pm">
-          3:00 pm
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="4pm">
-        <label class="form-check-label" for="4pm">
-          4:00 pm
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="5pm">
-        <label class="form-check-label" for="5pm">
-          5:00 pm
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="6pm">
-        <label class="form-check-label" for="6pm">
-          6:00 pm
-        </label>
-      </div>
-
+    <div class="card">
+      <button class="btn btn-outline-primary">Guardar</button>
     </div>
   </form>
 
-  <button class="btn btn-outline-primary">Guardar</button>
 </section>
 {% endblock %}

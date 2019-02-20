@@ -136,22 +136,55 @@ def perfil():
             return render_template("perfil.html", username=session['username'], sesion="True", tipo_usuario=session['typeuser'], user=user)
 
 
-@app.route('/reserv')
+@app.route('/reserv', methods=['POST', 'GET'])
 def reserv():
-    if 'username' in session:
-        for user in db.usuario.find({"username": session['username']}):
-            return render_template("reserva_aula.html", username=session['username'], sesion="True", tipo_usuario=session['typeuser'], user=user)
+    if request.method == 'POST':
+        aula=request.form["Aula"]
+        fechaI=request.form["fecha_inicio"]
+        fechaF=request.form["fecha_fin"]
+        horario=request.form["horario"]
+        materia=request.form["Materia"]
+        periodicidad=request.form["Periodicidad"]
+        motivo=request.form["Motivo"]
+        db.approb.insert({
+            "aula":aula,
+            "fechaI":fechaI,
+            "fechaF":fechaF,
+            "horario":horario,
+            "materia":materia,
+            "periodicidad":periodicidad,
+            "motivo":motivo,
+            "solicitante": session['username'],
+            "approb":"pendding",
+            "iden":db.approb.find({}).count()
+        })
+        return redirect('/')
     else:
-        return redirect('/login')
+        if 'username' in session:
+            for user in db.usuario.find({"username": session['username']}):
+                return render_template("reserva_aula.html", username=session['username'], sesion="True", tipo_usuario=session['typeuser'], user=user)
+        else:
+            return redirect('/login')
 
 
-@app.route('/solicitudes')
+@app.route('/solicitudes' , methods=['POST', 'GET'])
 def solicitudes():
-    if 'username' in session:
+    if request.method == 'POST':
+        print(request.form)
+        approb=request.form.get("approb")
+        print(approb)
+        print(["holaaaaaaaaaaaaaaaaaa"])
+        aux=request.form["id1"]
+        print(aux)
+        db.approb.update({"iden":aux},{'$set':{"approb":approb}})
         for user in db.usuario.find({"username": session['username']}):
-            return render_template("solicitudesReservacion.html", username=session['username'], sesion="True", tipo_usuario=session['typeuser'], user=user)
+            return render_template("solicitudesReservacion.html", username=session['username'], sesion="True", tipo_usuario=session['typeuser'], user=user,aulas=db.approb.find({"approb":{"$in":["pendding"]}}))
     else:
-        return redirect('/login')
+        if 'username' in session:
+            for user in db.usuario.find({"username": session['username']}):
+                return render_template("solicitudesReservacion.html", username=session['username'], sesion="True", tipo_usuario=session['typeuser'], user=user,aulas=db.approb.find({"approb":{"$in":["pendding"]}}))
+        else:
+            return redirect('/login')
 
 
 @app.route('/upload')
