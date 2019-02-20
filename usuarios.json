@@ -1,0 +1,7 @@
+{"_id":{"$oid":"5c6cb0aacb8fef124212db54"},"correo":"usuario1@gmail.com","contraseña":1234.0,"Datos_Personales":{"nombre":"Lucho","apellido":"Portuano","telefono":"4123654879","imagen":""},"tipo_usuario":"Estudiante"}
+{"_id":{"$oid":"5c6cb13ccb8fef124212db55"},"correo":"usuario2@gmail.com","contraseña":2345.0,"Datos_Personales":{"nombre":"Rosa","apellido":"Melo","telefono":"4123654878","imagen":""},"tipo_usuario":"Profesor"}
+{"_id":{"$oid":"5c6cb189cb8fef124212db56"},"correo":"usuario3@gmail.com","contraseña":3456.0,"Datos_Personales":{"nombre":"Orto","apellido":"Mhen","telefono":"4123654877","imagen":""},"tipo_usuario":"Profesor"}
+{"_id":{"$oid":"5c6cb1cbcb8fef124212db57"},"correo":"usuario4@gmail.com","contraseña":4567.0,"Datos_Personales":{"nombre":"Lola","apellido":"Mento","telefono":"4123654876","imagen":""},"tipo_usuario":"Estudiante"}
+{"_id":{"$oid":"5c6cb20fcb8fef124212db58"},"correo":"usuario5@gmail.com","contraseña":5678.0,"Datos_Personales":{"nombre":"Charlie","apellido":"Mata","telefono":"4123654875","imagen":""},"tipo_usuario":"Secretaria"}
+{"_id":{"$oid":"5c6cb256cb8fef124212db59"},"correo":"usuario6@gmail.com","contraseña":6789.0,"Datos_Personales":{"nombre":"Mari","apellido":"kittu","telefono":"4123654876","imagen":""},"tipo_usuario":"Director"}
+{"_id":{"$oid":"5c6cb2a8cb8fef124212db5a"},"correo":"usuario7@gmail.com","contraseña":7890.0,"Datos_Personales":{"nombre":"Karl","apellido":"Kull","telefono":"4123654874","imagen":""},"tipo_usuario":"Jefe de Departamento"}

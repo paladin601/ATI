@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5c6cb457cb8fef124212db5b"},"aula_res":25.0,"user_res":"Rosa Melo","horario_res":"9:00 - 11:00","fecha_iniRes":"08/01/2019","fecha_finRes":"28/02/2019","motivo_res":"Clases","materia":"Cafe sin azucar","aceptada":true,"pregrado":false,"periodicidad":""}
+{"_id":{"$oid":"5c6cb4bbcb8fef124212db5c"},"aula_res":"PB3","user_res":"Dr. Orto Mhen","horario_res":"13:00 - 15:00","fecha_iniRes":"08/01/2019","fecha_finRes":"28/02/2019","motivo_res":"Clases","materia":"Programacion de arepa sin harina","aceptada":false,"pregrado":false,"periodicidad":""}
