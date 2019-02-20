@@ -34,21 +34,38 @@ def login():
         for user in users:
             count=1
             typeuser=user['typeuser']
+            suspend=user['suspend']
             break
         
         if count > 0 :
-            session['username'] = request.form['username']
-            username = request.form['username']
-            session['typeuser']=typeuser
-
-            #datos_f = db.usuario.find()
-            return redirect('/')
+            if suspend==True:
+                error="Su usuario se encuentra Suspendido"
+                return render_template ('Iniciar_sesion.html',sesion="False",error=error)
+            else:
+                session['username'] = request.form['username']
+                session['typeuser']=typeuser
+                #datos_f = db.usuario.find()
+                return redirect('/')
         else: 
             return render_template ('Iniciar_sesion.html',sesion="False",error="Usuario o Contraseña incorrectos")
     else:
         return render_template ('Iniciar_sesion.html',sesion="False")
 
-    
+@app.route('/suspend', methods = ['POST', 'GET'])
+def suspend():
+    if request.method == 'POST':
+        users=db.usuario.find({"typeuser":"usuario"})
+        for user in users:
+            suspend=request.form.get(user['username'])
+            if suspend=='on':
+                suspend=True
+            else:
+                suspend=False
+            db.usuario.update({'_id':user['_id']},{'$set':{'suspend':suspend}})
+        return render_template ('suspend.html',username = session['username'],sesion="True",tipo_usuario=session['typeuser'],users=db.usuario.find({"typeuser":"usuario"})) 
+    else:
+        return render_template ('suspend.html',username = session['username'],sesion="True",tipo_usuario=session['typeuser'],users=db.usuario.find({"typeuser":"usuario"}))
+
 @app.route('/register', methods = ['POST', 'GET'])
 def register():
     if request.method == 'POST':
@@ -57,7 +74,7 @@ def register():
             passwordF = request.form['Contrasena']
             password = request.form['RContrasena']
             if passwordF == password:
-                db.usuario.insert({'username' : usernameF , 'password' : passwordF,'typeuser':'usuario'})
+                db.usuario.insert({'username' : usernameF , 'password' : passwordF,'typeuser':'usuario','suspend':False})
                 session['username'] = request.form['Correo']
                 session['typeuser']="usuario"
                 username = request.form['Correo']
@@ -106,10 +123,10 @@ def perfil():
         apellidoF = request.form['Apellido']
         telefonoF = request.form['telef']
         imagenF = request.form['img']
-        db.usuario.update({"username" : session['username']} , {set:{"datos_personales":{ "nombre":nombreF, "apellido": apellidoF, "Telefono": telefonoF, "imagen" : imagenF}}})
+        db.usuario.update({"username" : session['username']} , {'$set':{"datos_personales":{ "nombre":nombreF, "apellido": apellidoF, "Telefono": telefonoF, "imagen" : imagenF}}})
         return redirect('/') 
     else:
-        return render_template("perfil.html",username = session['username'],sesion="True",tipo_usuario=session['typeuser'])
+        return render_template("perfil.html",username = session['username'],sesion="True",tipo_usuario=session['typeuser'],user=db.usuario.find({"username":session['username']}))
 
 @app.route('/reserv')
 def reserv():

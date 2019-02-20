@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Suspender{% endblock %}
+{% block content %}
+<section class="container">
+  <h2>Suspender Usuario</h2>
+  <form method="POST" action="/suspend">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Nombre</th>
+          <th scope="col" class="text-center">Apellido</th>
+          <th scope="col" class="text-center">Correo</th>
+          <th scope="col" class="text-center">Estatus</th>
+          <th scope="col" class="text-center">Suspender?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td class="text-center">
+            {% if user.datos_personales %}
+              {% if user.datos_personales.nombre %}
+                {{ user.datos_personales.nombre }}
+              {% endif %}
+            {% else %}
+              Sin Definir
+            {% endif %}
+          </td>
+          <td class="text-center">
+            {% if user.datos_personales %}
+              {% if user.datos_personales.apellido %}
+                {{ user.datos_personales.apellido }}
+              {% endif %}
+            {% else %}
+              Sin Definir
+            {% endif %}
+          </td>
+          <td class="text-center">
+            {{user.username}}
+          </td>
+          <td class="text-center">
+            {% if user.suspend==false %}
+              Activo
+            {% else %}
+              Suspendido
+            {% endif %}
+          </td>
+          <td class="text-center">
+            <input type="checkbox" class="mouse-click" name="{{user.username}}" id="{{user.username}}" {% if user.suspend!=false %}checked{% endif %}>
+          </td>
+  
+        </tr>
+  
+        {% endfor %}
+  
+      </tbody>
+    </table>
+    <div class="text-right">
+      <button class="btn btn-outline-primary" type="submit">Guardar</button>
+    </div>
+  </form>
+</section>
+{% endblock %}
