@@ -2,7 +2,7 @@ from flask import Flask, render_template, render_template_string ,session, reque
 from flask_mongoalchemy import MongoAlchemy
 from flask_user import login_required, UserManager, UserMixin
 from pymongo import MongoClient
-from docx_lector import lector
+import docx
 
 app = Flask(__name__)
 app.secret_key = 'the secret key'
@@ -82,8 +82,13 @@ def create_app():
     @app.route('/solicitudes')
     def solicitudes():
         return render_template("solicitudesReservacion.html")
-    @app.route('/upload')
+    @app.route('/upload', methods=['GET','POST'])
     def upload():
+        if request.method == 'POST':
+            print("post")
+            dir=request.files
+
+            print(dir)
         return render_template("cargarReservaciones.html")
     @app.route('/modify')
     def modify():

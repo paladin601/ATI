@@ -4,7 +4,27 @@
 <section class="container">
   <h2 class="text-center">Cargar Reservaciones</h2>
   <div class="">
-    <button class="btn btn-outline-primary">Cargar Archivo</button>
+    <form method="post">
+      <input type="file" name="fileupload">
+      <input type="submit" value="Enviar">
+      <button class="btn btn-outline-primary" type="submit">Cargar Archivo</button>
+      <script>
+
+
+        $(document).ready(function () {
+
+          // Escuchamos el evento 'change' del input donde cargamos el archivo
+          $(document).on('change', 'input[type=file]', function (e) {
+            // Obtenemos la ruta temporal mediante el evento
+           console.log(e.originalEvent.path[0].value);
+           console.log(e);
+            // Mostramos la ruta temporal
+
+          });
+
+        });
+        </script>
+    </form>
   </div>
   <br>
   <div class="">
