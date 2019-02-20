@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5c6caa6f1c9d8e8e8bd9a730"},"nro_aula":18.0,"capacidad":40.0,"reservada":false,"reser_a":"Lucho Portuano","horarios_disp":"9:00 - 11:00, 15:00 - 17:00","videobeam":false,"dias_disp":"Lunes, Martes, Miercoles, Jueves, Viernes"}
+{"_id":{"$oid":"5c6cab301c9d8e8e8bd9a731"},"nro_aula":25.0,"capacidad":45.0,"reservada":true,"reser_a":"Rosa Melo","horarios_disp":"9:00 - 11:00, 11:00 - 13:00","videobeam":false,"dias_disp":"Lunes, Martes, Miercoles, Jueves, Viernes"}
+{"_id":{"$oid":"5c6cac141c9d8e8e8bd9a732"},"nro_aula":"PB3","capacidad":15.0,"reservada":true,"reser_a":"Dr. Orto Mhen","horarios_disp":"7:00 - 9:00, 13:00 - 15:00","videobeam":true,"dias_disp":"Lunes, Martes, Miercoles, Jueves, Viernes"}
+{"_id":{"$oid":"5c6cac691c9d8e8e8bd9a733"},"nro_aula":11.0,"capacidad":60.0,"reservada":false,"reser_a":"","horarios_disp":"7:00 - 9:00, 13:00 - 15:00","videobeam":true,"dias_disp":"Lunes, Martes, Miercoles, Jueves, Viernes"}
+{"_id":{"$oid":"5c6cac931c9d8e8e8bd9a734"},"nro_aula":2.0,"capacidad":40.0,"reservada":false,"reser_a":"","horarios_disp":"7:00 - 9:00, 15:00 - 17:00","videobeam":false,"dias_disp":"Lunes, Martes, Miercoles, Jueves, Viernes"}
