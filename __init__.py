@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, redirect, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -17,9 +17,7 @@ def home_page():
         # String-based templates
     
     if 'username' in session:
-        username = session['username']
-        tipo = session['typeuser']
-        return render_template ('index.html',username = username,sesion="True",tipo_usuario=tipo)
+        return render_template ('index.html',username = session['username'],sesion="True",tipo_usuario=session['typeuser'])
     else:
         return render_template ('index.html',sesion="False")
 
@@ -35,6 +33,7 @@ def login():
         count=0
         for user in users:
             count=1
+            print(user["_id"])
             typeuser=user['typeuser']
             break
         
@@ -44,7 +43,7 @@ def login():
             session['typeuser']=typeuser
 
             #datos_f = db.usuario.find()
-            return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
+            return redirect('/')
         else: 
             return render_template ('Iniciar_sesion.html',sesion="False",error="Usuario o Contraseña incorrectos")
     else:
@@ -64,7 +63,7 @@ def register():
                 session['typeuser']="usuario"
                 username = request.form['Correo']
                 #datos_f = db.usuario.find()
-                return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
+                return redirect('/')
             else:
                 error="Las contraseñas no coinciden"
                 return render_template("registro_usuario.html",sesion="False",error=error,correo=usernameF)
@@ -121,7 +120,7 @@ def reserv():
         username = session['username']
         return render_template("reserva_aula.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
-        return render_template ('Iniciar_sesion.html',sesion="False") 
+        return redirect('/login') 
 
 @app.route('/solicitudes')
 def solicitudes():
@@ -129,7 +128,8 @@ def solicitudes():
         username = session['username']
         return render_template("solicitudesReservacion.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
-        return render_template ('Iniciar_sesion.html',sesion="False")   
+        return redirect('/login') 
+  
     
     
 @app.route('/upload')
@@ -138,7 +138,7 @@ def upload():
         username = session['username']
         return render_template("cargarReservaciones.html" ,username = username,sesion="True",tipo_usuario=session['typeuser'])
     else:
-        return render_template ('Iniciar_sesion.html',sesion="False")  
+        return redirect('/login') 
 
 @app.route('/modify')
 def modify():
@@ -148,7 +148,7 @@ def modify():
 def close():
 	session.pop('username', None)
 	session.pop('typeuser', None)
-	return render_template("index.html",sesion="False")
+	return redirect('/')
 
 #    return app
 
