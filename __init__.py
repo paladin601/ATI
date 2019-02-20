@@ -33,7 +33,7 @@ def login():
         count=0
         for user in users:
             count=1
-            print(user["_id"])
+            session["id"]=user["_id"]
             typeuser=user['typeuser']
             break
         
