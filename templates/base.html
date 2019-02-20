@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/static/fontawesome/css/all.css">
     <link rel="stylesheet" href="/static/css/home.css" />
     <title>{% block title %}{% endblock %}</title>
+    <script src="/static/js/home.js"></script>
     {% endblock %}
 </head>
 
@@ -30,21 +31,53 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./consult">Consultar Aula</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./solicitudes">Consultar Solicitudes de Aula</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./reserv">Reservar Aula</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./upload">Cargar Reservaciones</a>
-                </li>
+                    {% if tipo_usuario|string() == "usuario" %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./consult">Consultar Aula</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserv">Reservar Aula</a>
+                        </li>
+                        {% elif tipo_usuario|string() == "secretaria" %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./consult">Consultar Aula</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./solicitudes">Consultar Solicitudes de Aula</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserv">Reservar Aula</a>
+                        </li>
+                        {% elif tipo_usuario|string() == "jefe" %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./consult">Consultar Aula</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./solicitudes">Consultar Solicitudes de Aula</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserv">Reservar Aula</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./upload">Cargar Reservaciones</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./consult">Consultar Aula</a>
+                        </li>
+                        {% endif %}
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
@@ -55,14 +88,12 @@
                     <div class="dropdown-menu dropdown-menu-right dropdown-default"
                         aria-labelledby="navbarDropdownMenuLink-333">
                         {% if sesion|string() == "True" %}
-                        
                             <a class="dropdown-item" href="./logout"> Cerrar sesion</a>
                             <a class="dropdown-item" href="./perfil">Configuracion de perfil</a>                            
                         {% else%}
                             <a class="dropdown-item" href="./login">Iniciar sesion</a>
+                            <a class="dropdown-item" href="./register">Registrarse</a>
                         {% endif %}
-
-                        <a class="dropdown-item" href="./register">Registrarse</a>
                         
                     </div>
                 </li>

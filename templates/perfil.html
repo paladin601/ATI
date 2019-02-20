@@ -5,23 +5,23 @@
   <div class="row">
     <div style="margin: 0 auto; min-width: 25vw;">
 
-      <form>
+      <form action="                                                                    http://localhost:5000/per_in" method="POST" name="form">
         <div class="form-group">
           <h2>Configuración de perfil</h2>
           <label for="Nombre">Nombre:</label>
-          <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
+          <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre">
         </div>
         <div class="form-group">
           <label for="Apellido">Apellido:</label>
-          <input type="text" class="form-control" id="Apellido" placeholder="Apellido">
+          <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Apellido">
         </div>
         <div class="form-group">
           <label for="telf">Numero de telf:</label>
-          <input type="text" class="form-control" id="telf" placeholder="Numero de telf">
+          <input type="text" class="form-control" id="telf" name="telf" placeholder="Numero de telf">
         </div>
         <div class="form-group">
           <label for="img">Imagen de perfil:</label>
-          <input type="file" class="form-control-file" id="img">
+          <input type="file" class="form-control-file" id="img" name="img">
         </div>
         <div class="form-group">
           <h4 class="text-center">Cambiar Contraseña</h4>
@@ -38,7 +38,7 @@
         </div>
       </form>
 
-      <button class="btn btn-outline-primary"> Aplicar</button>
+      <button class="btn btn-outline-primary" type="submit"> Aplicar</button>
       <button class="btn btn-outline-primary" onclick="location.href='/'"> Cancelar</button>
     </div>
   </div>
