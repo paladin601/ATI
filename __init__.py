@@ -101,17 +101,15 @@ def gestion():
     
 @app.route('/perfil')
 def perfil():
-    return render_template("perfil.html")
-
-@app.route('/per_in', methods = ['POST', 'GET'])
-def per_in():
     if request.method == 'POST':
         nombreF = request.form['Nombre']
         apellidoF = request.form['Apellido']
         telefonoF = request.form['telef']
         imagenF = request.form['img']
         db.usuario.update({"username" : session['username']} , {set:{"datos_personales":{ "nombre":nombreF, "apellido": apellidoF, "Telefono": telefonoF, "imagen" : imagenF}}})
-        return render_template("Iniciar_sesion.html")
+        return redirect('/') 
+    else:
+        return render_template("perfil.html",username = session['username'],sesion="True",tipo_usuario=session['typeuser'])
 
 @app.route('/reserv')
 def reserv():
