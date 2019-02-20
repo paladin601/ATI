@@ -31,10 +31,17 @@ def list():
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
     if request.method == 'POST':
-        if db.usuario.find({ "$and" :[{'username':request.form['username']},{'password':request.form['password']}]}).count() > 0 :
+        users=db.usuario.find({ "$and" :[{'username':request.form['username']},{'password':request.form['password']}]})
+        count=0
+        for user in users:
+            count=1
+            typeuser=user['typeuser']
+            break
+        
+        if count > 0 :
             session['username'] = request.form['username']
             username = request.form['username']
-            session['typeuser']="usuario"
+            session['typeuser']=typeuser
 
             #datos_f = db.usuario.find()
             return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
