@@ -39,7 +39,7 @@ def login():
             #datos_f = db.usuario.find()
             return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
         else: 
-            return render_template ('Iniciar_sesion.html',sesion="False",error="usuario o contraseña incorrectos")
+            return render_template ('Iniciar_sesion.html',sesion="False",error="Usuario o Contraseña incorrectos")
     else:
         return render_template ('Iniciar_sesion.html',sesion="False")
 
@@ -48,13 +48,10 @@ def login():
 def register():
     if request.method == 'POST':
         usernameF = request.form['Correo']
-        print("hola")
         if db.usuario.find({'username':request.form['Correo']}).count()==0:  
-            print("hola")
             passwordF = request.form['Contrasena']
             password = request.form['RContrasena']
             if passwordF == password:
-                print("hola")
                 db.usuario.insert({'username' : usernameF , 'password' : passwordF,'typeuser':'usuario'})
                 session['username'] = request.form['Correo']
                 session['typeuser']="usuario"
@@ -63,9 +60,9 @@ def register():
                 return render_template ('index.html',username = username,sesion="True",tipo_usuario=session['typeuser'])
             else:
                 error="Las contraseñas no coinciden"
-                return render_template("registro_usuario.html",sesion="False",error=error)
+                return render_template("registro_usuario.html",sesion="False",error=error,correo=usernameF)
         else:
-            error="el correo ya esta registrado"
+            error="El correo ya esta registrado"
             return render_template("registro_usuario.html",sesion="False",error=error)
 
     else:
