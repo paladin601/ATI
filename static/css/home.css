@@ -22,3 +22,7 @@ tr.mouse-click:hover{
 #calendar {
     margin: 20px auto;
   }
+.content-button{
+    display: flex;
+    justify-content: space-between;
+}

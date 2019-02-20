@@ -123,10 +123,13 @@ def perfil():
     if request.method == 'POST':
         nombreF = request.form['Nombre']
         apellidoF = request.form['Apellido']
+        CorreoF = request.form['Correo']
         telefonoF = request.form['telf']
         imagenF = request.form['img']
-        db.usuario.update({"username": session['username']}, {'$set': {"datos_personales": {
+        db.usuario.update({"username": session['username']}, {'$set': {"username":CorreoF,"datos_personales": {
                           "nombre": nombreF, "apellido": apellidoF, "telefono": telefonoF, "imagen": imagenF}}})
+        if CorreoF!=session['username']:
+            session['username']=CorreoF
         return redirect('/')
     else:
         for user in db.usuario.find({"username": session['username']}):
