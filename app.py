@@ -2,6 +2,7 @@ from flask import Flask, render_template, render_template_string ,session, reque
 from flask_mongoalchemy import MongoAlchemy
 from flask_user import login_required, UserManager, UserMixin
 from pymongo import MongoClient
+from docx_lector import lector
 
 app = Flask(__name__)
 app.secret_key = 'the secret key'
