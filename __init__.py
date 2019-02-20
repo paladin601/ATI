@@ -25,7 +25,6 @@ def home_page():
 @app.route ('/users')
 def list():
 	usuario = db.usuario.find()
-    print(usuario)
 	return render_template('data.html',usuario = usuario)
 
 @app.route('/login', methods = ['POST', 'GET'])
@@ -47,6 +46,7 @@ def register():
     if request.method == 'POST':
         usernameF = request.form['Correo']
         passwordF = request.form['Contrasena']
+        password = request.form['RContrasena']
         db.usuario.insert({'username' : usernameF , 'password' : passwordF})
         session['username'] = request.form['Correo']
         username = request.form['Correo']
